@@ -1,5 +1,6 @@
-// App.ts
 import {defineComponent} from 'vue';
+import MyComponent from './components/MyComponent.vue';
+
 
 export default defineComponent({
   name: 'App',
@@ -9,6 +10,6 @@ export default defineComponent({
     };
   },
   components: {
-    // Seus componentes
+    MyComponent,
   },
 });
