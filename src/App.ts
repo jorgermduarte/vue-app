@@ -1,5 +1,6 @@
 import {defineComponent} from 'vue';
 import MyComponent from './components/MyComponent.vue';
+import CustomScene from './components/CustomScene.vue';
 
 
 export default defineComponent({
@@ -11,5 +12,6 @@ export default defineComponent({
   },
   components: {
     MyComponent,
+    CustomScene,
   },
 });

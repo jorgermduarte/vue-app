@@ -1,9 +1,5 @@
 <template>
-  <div class="app-area">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <h1>Welcome to Your Vue.js + TypeScript App</h1>
-    <MyComponent></MyComponent>
-  </div>
+  <CustomScene></CustomScene>
 </template>
 
 <script lang="ts" src="./App">
