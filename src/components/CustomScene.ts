@@ -3,20 +3,23 @@ import {defineComponent} from 'vue';
 
 export default defineComponent({
   name: 'CustomScene',
+  data() {
+    return {
+      fireflies: Array(50).fill(0).map(() => ({
+        duration: Math.random() * 2,
+        delay: Math.random() * 2,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+      })),
+    };
+  },
   mounted() {
-    const fireflies = document.querySelectorAll('.firefly');
-
-    fireflies.forEach((firefly) => {
-      const duration = Math.random() * 2;
-      const delay = Math.random() * 2;
-      // @ts-ignore
-      firefly.style.animationDuration = `${duration}s, ${duration * 2}s`;
-      // @ts-ignore
-      firefly.style.animationDelay = `${delay}s, ${delay * 2}s`;
-      // @ts-ignore
-      firefly.style.left = `${Math.random() * 80}vw`;
-      // @ts-ignore
-      firefly.style.top = `${Math.random() * 80}vh`;
-    });
+    setInterval(() => {
+      this.fireflies = this.fireflies.map((firefly) => ({
+        ...firefly,
+        left: Math.random() * 95,
+        top: Math.random() * 95,
+      }));
+    }, 2000); // Muda a posição dos pirilampos a cada 2 segundos
   },
 });

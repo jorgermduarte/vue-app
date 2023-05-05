@@ -1,33 +1,18 @@
 <!-- eslint-disable require-jsdoc -->
 <template>
-     <div class="fireflies">
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
-        <div class="firefly"></div>
+    <div class="fireflies">
+        <div
+            class="firefly"
+            v-for="(firefly, index) in fireflies"
+            :key="index"
+            :style="{
+            animationDuration: `${firefly.duration}s, ${firefly.duration * 2}s`,
+            animationDelay: `${firefly.delay}s, ${firefly.delay * 2}s`,
+            left: `${firefly.left}vw`,
+            top: `${firefly.top}vh`,
+            }"
+        ></div>
     </div>
-
 <div class="container">
     <div class="text">Jorge Duarte</div>
 </div>
@@ -88,8 +73,8 @@
 
 .firefly {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 5px;
+    height: 5px;
     background-color: #eeeef2;
     border-radius: 50%;
     opacity: 1;
@@ -138,6 +123,10 @@ body{
     }
 }
 
+.firefly {
+  /* outras propriedades */
+  transition: top 2s, left 2s;
+}
 
 </style>
 
